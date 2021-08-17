@@ -1,0 +1,102 @@
+:root {
+  --blue: #189bd5;
+  --gray80: #808080;
+}
+
+body {
+  padding: 0px;
+  margin: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+*:focus {
+  outline: 0;
+}
+#app {
+  height: 100vh;
+  background-color: #f8f8f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  width: 100%;
+  height: 90%;
+  max-width: 1200px;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 3px 1px 7px 0px rgba(0, 0, 0, 0.1);
+  border: solid #ddd 1px;
+  display: flex;
+}
+aside {
+  width: 300px;
+  border-right: solid #ddd 1px;
+}
+.content {
+  flex: 1;
+}
+.detail {
+  width: 490px;
+  border-left: solid #ddd 1px;
+}
+
+/* Typograph */
+$dark: #333;
+.h1 {
+  font-size: 24px;
+  color: $dark;
+}
+.h2 {
+  font-size: 16px;
+  color: $dark;
+}
+.sub-title {
+  font-size: 14px;
+  color: #808080;
+}
+.font-weight-bold {
+  font-weight: 700;
+}
+
+// Space
+$space: (
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  15,
+  20,
+  25,
+  30,
+  35,
+  40,
+  45,
+  50,
+  75,
+  100
+);
+$pos: (top, bottom, left, right);
+
+@each $s in $space {
+  .m-#{$s} {
+    margin: #{$s}px;
+  }
+  .p-#{$s} {
+    padding: #{$s}px;
+  }
+  @each $p in $pos {
+    .m#{str-slice($p, 0, 1)}-#{$s} {
+      margin-#{$p}: #{$s}px;
+    }
+    .p#{str-slice($p, 0, 1)}-#{$s} {
+      padding-#{$p}: #{$s}px;
+    }
+  }
+}

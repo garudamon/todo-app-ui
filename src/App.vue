@@ -1,28 +1,23 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="container">
+      <sidebar />
+      <task-list />
+      <task-detail />
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import '@/assets/scss/styles.scss';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
-}
+    Sidebar: () => import('@/components/Sidebar'),
+    TaskList: () => import('@/components/TaskList'),
+    TaskDetail: () => import('@/components/TaskDetail'),
+  },
+  data: () => ({}),
+};
 </script>
-
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
